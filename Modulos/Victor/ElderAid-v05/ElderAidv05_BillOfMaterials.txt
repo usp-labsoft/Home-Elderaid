@@ -1,0 +1,33 @@
+Circuits.io Bill Of Materials
+IDS,#,Component,Footprint,Properties
+U1,1,Arduino uno  Well known development board that makes it easy to receive sensorinput and control electrical components with code. The Uno is the most widely used Arduino.,ARDUINO,"// Pin 13 has an LED connected on most Arduino boards.
+// give it a name:
+int led = 13;
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize the digital pin as an output.
+  pinMode(led, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);               // wait for a second
+  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);               // wait for a second
+} code"
+D1,1,LED Red  This is the Red LED in the Arduino Kit,LED 5mm Red,""
+"R1, R2",2,Resistor 1k ohm  This the 1k resistor from the Arduino Kit,Resistor 1/4 Watt 1K,""
+S1,1,Pushbutton  Momentary switches that close a circuit when pressed.,TACTILE-PTH,""
+GAS1,1,"Gas Sensor  This part is a Winsen (or compatible) gas sensor, such as the MQ-3 (alcohol), MQ-4 (methane), MQ-5 (LPG), MQ-6 (LPG), MQ-7 (carbon monoxide), MQ-8 (hydrogen), etc.",MQ-4,"0 hidden, -200 hidden"
+R3,1,Photoresistor (LDR)  A variable resistor that changes its resistance based on the amount of light that falls on its' face.,LDR,""
+R5,1,Resistor 10K ohm  This is the 10K ohm resistor from the Arduino Kit,Resistor 1/4 Watt 10K,""
+R6,1,Potentiometer 10k  This is the 10K Potentiometer in the Arduino Kit,Potentiometer Arduino Kit,0 hidden
+L1,1,Light bulb  Incandescent light bulb 12V / 3W,2 pin,""
+PIEZO1,1,Buzzer [Piezo small]  This is the Piezo buzzer included in the DFRobot Kit. It is 12mm in diameter. See datasheet for frequency response.,PIEZO 12mm DIAMETER,""
+PIR1,1,PIR Sensor  Passive infrared motion sensor. Outputs a high-signal when motion is detected in its field of view. https://www.parallax.com/product/555-28027,PIR Sensor,""
+T1,1,NPN Transistor (BJT)  A bipolar junction used for amplifying or switching electronic signals. This type of BJT (Bipolar Junction) needs a positive current in the base terminal.,SOT37,""
+D2,1,Diode  Ensures electricity only flows in 1 direction. Useful when you have a motor or other high current/voltage load in your circuit.,SOD83-12,""
+K1,1,Relay SPDT  5V SPDT miniature power relay,DIL12,""
+P1,1,Power Supply  This is the component used to represent the power supply in the Electronics Workbench (the breadboard simulator).  There are multiple footprints so if you are designing a PCB be sure to choose which footprint works best for your design.,Power Supply Screw Terminal,"127 , 5 "
