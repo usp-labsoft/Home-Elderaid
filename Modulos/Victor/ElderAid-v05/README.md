@@ -32,14 +32,14 @@ Com isso, na inicialização do aplicativo, temos dados de data e horário atuai
 
 [Lâmpada](v05_lampada.jpg)
 
-![Esquemático Maquete Arduino v05](ElderAidv05_labview.png)
+![Esquemático Maquete Arduino v05](ElderAidv05_labview.PNG)
 
 
 
 
 **App Blynk**
 
-![Interface App Blynk](v05_blynk_interface.jpg)
+![Interface App Blynk](v05_blynk_interface.png)
 
 ![SOS](blynk_sos.png)
 
