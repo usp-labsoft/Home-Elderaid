@@ -24,15 +24,15 @@ Com isso, na inicialização do aplicativo, temos dados de data e horário atuai
 
 ![Visão Geral](v05_visaogeral.jpg)
 
-![Placa](v05_placa.jpg)
+[Placa](v05_placa.jpg)
 
-![LDR](v05_LDR.jpg)
+[LDR](v05_LDR.jpg)
 
-![Placa](v05_placa.jpg)
+[Placa](v05_placa.jpg)
 
-![Lâmpada](v05_lampada.jpg)
+[Lâmpada](v05_lampada.jpg)
 
-![Esquemático Maquete Arduino v05](ElderAidv05_labview.jpg)
+![Esquemático Maquete Arduino v05](ElderAidv05_labview.png)
 
 
 
@@ -41,14 +41,14 @@ Com isso, na inicialização do aplicativo, temos dados de data e horário atuai
 
 ![Interface App Blynk](v05_blynk_interface.jpg)
 
-![SOS](blynk_sos.jpg)
+![SOS](blynk_sos.png)
 
-![Gás](blynk_gas.jpg)
+[Gás](blynk_gas.png)
 
-![Caso de desconexão](blynk_disconect.jpg)
+[Caso de desconexão](blynk_disconect.png)
 
-![Twitter](blynk_twitter.jpg)
+![Twitter](blynk_twitter.png)
 
-![Email SOS](blynk_sos_email.jpg)
+[Email SOS](blynk_sos_email.png)
 
-![Email Gás](blynk_gas_email.jpg)
+![Email Gás](blynk_gas_email.png)
