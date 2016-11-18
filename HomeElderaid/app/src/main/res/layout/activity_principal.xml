@@ -15,101 +15,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="113dp"
-                android:id="@+id/guideline"
-                app:layout_constraintGuide_begin="192dp"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteY="0dp"
-                tools:layout_editor_absoluteX="192dp" />
-
-            <android.support.constraint.Guideline
-                android:layout_width="0dp"
-                android:layout_height="113dp"
-                android:id="@+id/guideline2"
-                app:layout_constraintGuide_begin="0dp"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteY="0dp"
-                tools:layout_editor_absoluteX="0dp" />
-
-            <android.support.constraint.Guideline
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:id="@+id/guideline3"
-                app:layout_constraintGuide_begin="0dp"
-                android:orientation="horizontal"
-                tools:layout_editor_absoluteY="0dp"
-                tools:layout_editor_absoluteX="0dp" />
-
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="113dp"
-                android:id="@+id/guideline5"
-                app:layout_constraintGuide_begin="384dp"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteY="0dp"
-                tools:layout_editor_absoluteX="384dp" />
-
             <android.support.constraint.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@+id/guideline3"
-                app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintLeft_toLeftOf="@+id/guideline2">
-
-                <ToggleButton
-                    android:text="ToggleButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/toggleButton3"
-                    tools:layout_editor_absoluteY="48dp"
-                    tools:layout_editor_absoluteX="52dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:text="Name"
+                    android:text="@string/light"
                     android:ems="10"
                     android:id="@+id/editText4"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="184dp"
-                android:layout_height="113dp"
-                tools:layout_editor_absoluteY="0dp"
-                app:layout_constraintRight_toLeftOf="@+id/guideline5"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                app:layout_constraintLeft_toLeftOf="@+id/guideline">
+                    app:layout_constraintBottom_toTopOf="@+id/lightButton"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0" />
 
                 <ToggleButton
-                    android:text="ToggleButton"
+                    android:text="@string/lightButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/toggleButton4"
+                    android:id="@+id/lightButton"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText5" />
-
-                <ProgressBar
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="92dp"
-                    android:layout_height="44dp"
-                    android:id="@+id/progressBar3"
-                    android:background="@color/colorAccent"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText5" />
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:text="Name"
-                    android:ems="10"
-                    android:id="@+id/editText5" />
             </android.support.constraint.ConstraintLayout>
 
         </android.support.constraint.ConstraintLayout>

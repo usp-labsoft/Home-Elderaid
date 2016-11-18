@@ -13,8 +13,15 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
     <string name="Home">Minha Casa</string>
-    <string name="title_activity_login22">Sign in</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="title_activity_login2231">Sign in</string>
+
+    <!-- Strings related to Names in Main -->
+    <string name="light">Light</string>
+    <string name="presence">Presence</string>
+    <string name="gas">Gas</string>
+    <string name="door">Door</string>
+
+    <!-- String related to buttons in Main -->
+    <string name="lightButton">ToggleButtonLight</string>
 </resources>

@@ -32,6 +32,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity  {
     /**
      * Id to identity READ_CONTACTS permission request.
      */
-    private static final int REQUEST_READ_CONTACTS = 0;
+    //private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -69,6 +70,7 @@ public class LoginActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        checkAuthKey();
         setContentView(R.layout.activity_login);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -81,7 +83,16 @@ public class LoginActivity extends AppCompatActivity  {
             }
         });
 
+        mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    private void checkAuthKey() {
+        File authFile = new File("authKey.txt");
+        if (authFile.exists()) {
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            LoginActivity.this.startActivity(i);
+        }
     }
 
     /*private void populateAutoComplete() {
