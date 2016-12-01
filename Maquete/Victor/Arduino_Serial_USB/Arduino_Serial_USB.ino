@@ -80,4 +80,8 @@ void loop()
 {
   Blynk.run();
 }
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> Luiz

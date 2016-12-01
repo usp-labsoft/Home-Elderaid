@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Auth Token for New Project project "607cc39ee6de48708f1b831dacb40e37"
 
 Arduino USB Serial Example
@@ -5,4 +6,13 @@ C:\Program Files (x86)\Arduino\libraries\Blynk\scripts
 blynk-ser.bat -c COM4
 
 
+=======
+Auth Token for New Project project "607cc39ee6de48708f1b831dacb40e37"
+
+Arduino USB Serial Example
+C:\Program Files (x86)\Arduino\libraries\Blynk\scripts
+blynk-ser.bat -c COM4
+
+
+>>>>>>> Luiz
 Blynk Library in Arduino/libraries

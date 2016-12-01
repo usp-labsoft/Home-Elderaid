@@ -203,4 +203,8 @@ void loop()
 {
   Blynk.run();
   timer.run();
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> Luiz

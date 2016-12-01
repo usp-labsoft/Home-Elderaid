@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 Materiais: Arduino IDE, Blynk Library, Protoboard, Arduino Uno, Botão, LED, dois resistores e um potenciômetro
 Tutorial: instalar arduino IDE, baixar biblioteca e colocar no Arduino/libraries, tutorial Arduino setup (No USB - base Blynk.com) e montar circuito.
+=======
+Materiais: Arduino IDE, Blynk Library, Protoboard, Arduino Uno, Botão, LED, dois resistores e um potenciômetro
+Tutorial: instalar arduino IDE, baixar biblioteca e colocar no Arduino/libraries, tutorial Arduino setup (No USB - base Blynk.com) e montar circuito.
+>>>>>>> Luiz
 Duração: 4 horas.

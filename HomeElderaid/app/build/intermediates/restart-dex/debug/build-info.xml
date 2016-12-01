@@ -5,29 +5,29 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.1"
-    timestamp="10408224182143"
+    timestamp="10018572169173"
     token="-3797702313372779510"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="12212" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="218" />
     <task
         name="verifier"
-        duration="0" />
+        duration="2" />
 
     <artifact
         location="C:\Users\Luiz\AndroidStudioProjects\HomeElderaid\HomeElderaid\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="11935194923710"
+        timestamp="12404126657933"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Luiz\AndroidStudioProjects\HomeElderaid\HomeElderaid\app\build\outputs\apk\app-debug.apk"
