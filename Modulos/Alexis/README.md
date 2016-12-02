@@ -10,7 +10,7 @@ O módulo de gás tem como objetivo a detecção de possíveis vazamentos de gas
 
 O módulo contém um sensor de gás MQ-2 que envia um sinal analógico informando a concentração de gás inflamável detectado na região, um buzzer, que funcionará como alarme, um LED, para simular um atuador, um Arduino UNO, que será responsável pelo processamento de informações e um ESP8266-12f, que irá conectar o módulo ao servidor em cloud.
 
-![Visão Geral](Visão_Geral_Gas.jpg)
+![Visão Geral](Visão_Geral_Gas.JPG)
 
 
 ### Funcionamento
