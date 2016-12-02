@@ -41,6 +41,7 @@ O acionamento do alarme (Buzzer + Led) pode ser feito pelo aplicativo ou por mei
 
 
 **Esquemático da Placa**
+
 Sem a funcionalidade de SOS adicional.
 
 ![Esquemático](Labview.PNG)
