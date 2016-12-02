@@ -5,7 +5,7 @@ package labsoft.homeelderaid;
  */
 
 public enum Pins {
-    LightSensor("V14"),
+    LightSensor("V29"),
     GasSensor("V6"),
     Presence("V30"),
     DoorSensor("V7"),

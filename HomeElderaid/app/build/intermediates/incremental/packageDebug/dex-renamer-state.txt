@@ -1,4 +1,4 @@
-#Thu Dec 01 00:30:27 BRST 2016
+#Fri Dec 02 00:04:07 BRST 2016
 base.0=C\:\\Users\\Luiz\\AndroidStudioProjects\\HomeElderaid\\HomeElderaid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\Luiz\\AndroidStudioProjects\\HomeElderaid\\HomeElderaid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

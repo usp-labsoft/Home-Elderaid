@@ -13,6 +13,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private static List<Button> Buttons;
     //private Button lightButton, gasButton, doorButton;
 
+    private static boolean isCon = false;
     private static double valueOfPinFromJson = 0.0;
     private static int opposeLightValue, alarmValue;
 
@@ -69,12 +71,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run(){
                 while(true) {
-                    if (isHWCon()) {
-                        updHWConHandler.sendEmptyMessage(0);
-                    }
-                    else {
-                        updHWUnConHandler.sendEmptyMessage(0);
-                    }
+                    updConStatus();
 
                     for (Pins pin : namesPins) {
                         readJsonFromURL(pin.value);
@@ -119,37 +116,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private boolean isHWCon(){
+    private void updConStatus(){
 
         try {
             for (Pins pin : conPins) {
                 urlWriteValueToPin writeConnect = new urlWriteValueToPin();
                 writeConnect.execute(pin.value, "0");
-                Thread.sleep(1000);
+                Thread.sleep(3000);
                 readJsonFromURL(pin.value);
                 JSONArray jsonArray = new JSONArray(json);
-                int conHW = Integer.parseInt((String) jsonArray.get(0));
-                if (conHW == 0) {
-                    return false;
-                }
+                int conInt = Integer.parseInt((String) jsonArray.get(0));
+                isCon = (conInt!=0);
+                updatePinView(pin);
             }
-            return true;
         } catch (InterruptedException | NumberFormatException | JSONException e) {
             error = "Couldn't connect to check HW conection";
-            return false;
         }
     }
 
     private void readJsonFromURL(String pinName) {
-        if (json == null) {
-            urlGetValueOfPin connect = new urlGetValueOfPin();
+        urlGetValueOfPin connect = new urlGetValueOfPin();
 
-            try {
-                json = connect.execute(pinName).get();
-            } catch (Exception e) {
-                json = null;
-                error = "Error in getting json file from server";
-            }
+        try {
+            json = connect.execute(pinName).get();
+        } catch (Exception e) {
+            json = null;
+            error = "Error in getting json file from server";
         }
     }
 
@@ -176,9 +168,54 @@ public class MainActivity extends AppCompatActivity {
         }*/else if (pin.equals(Pins.GasActuator)) {
             updGasActuatorHandler.sendEmptyMessage(0);
         }else if (pin.equals(Pins.Alarm)) {
-           updAlarmHandler.sendEmptyMessage(0);
+            updAlarmHandler.sendEmptyMessage(0);
+        } else if (pin.equals(Pins.ConLight)) {
+            updLightConHandler.sendEmptyMessage(0);
+        } else if (pin.equals(Pins.ConGas)) {
+            updGasConHandler.sendEmptyMessage(0);
+        } else if (pin.equals(Pins.ConDoor)) {
+            updDoorConHandler.sendEmptyMessage(0);
         }
     }
+
+    Handler updLightConHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            ImageView lightCon = (ImageView) findViewById(R.id.lightCon);
+            if (isCon) {
+                lightCon.setImageResource(android.R.drawable.presence_online);
+            }
+            else {
+                lightCon.setImageResource(android.R.drawable.presence_offline);
+            }
+        }
+    };
+
+    Handler updGasConHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            ImageView gasCon = (ImageView) findViewById(R.id.gasCon);
+            if (isCon) {
+                gasCon.setImageResource(android.R.drawable.presence_online);
+            }
+            else {
+                gasCon.setImageResource(android.R.drawable.presence_offline);
+            }
+        }
+    };
+
+    Handler updDoorConHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            ImageView doorCon = (ImageView) findViewById(R.id.doorCon);
+            if (isCon) {
+                doorCon.setImageResource(android.R.drawable.presence_online);
+            }
+            else {
+                doorCon.setImageResource(android.R.drawable.presence_offline);
+            }
+        }
+    };
 
     Handler updLightStatusHandler = new Handler() {
         @Override
@@ -276,7 +313,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    Handler updHWConHandler = new Handler(){
+    /*Handler updHWConHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             TextView HWCon = (TextView) findViewById(R.id.HWCon);
@@ -290,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
             TextView HWCon = (TextView) findViewById(R.id.HWCon);
             HWCon.setText("Sensors are not connected, showing last values");
         }
-    };
+    };*/
 
 
 

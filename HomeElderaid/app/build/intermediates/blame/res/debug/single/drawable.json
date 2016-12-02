@@ -88,6 +88,10 @@
         "source": "C:\\Users\\Luiz\\AndroidStudioProjects\\HomeElderaid\\HomeElderaid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
+        "merged": "C:\\Users\\Luiz\\AndroidStudioProjects\\HomeElderaid\\HomeElderaid\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle.xml",
+        "source": "C:\\Users\\Luiz\\AndroidStudioProjects\\HomeElderaid\\HomeElderaid\\app\\src\\main\\res\\drawable\\circle.xml"
+    },
+    {
         "merged": "C:\\Users\\Luiz\\AndroidStudioProjects\\HomeElderaid\\HomeElderaid\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
         "source": "C:\\Users\\Luiz\\AndroidStudioProjects\\HomeElderaid\\HomeElderaid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.0\\res\\drawable\\design_bottom_navigation_item_background.xml"
     },

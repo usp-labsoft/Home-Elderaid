@@ -10,7 +10,7 @@
         android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dip"
+        android:textSize="10dip"
         android:gravity="center"
         android:id="@+id/HWCon" />
 
@@ -20,7 +20,7 @@
             android:layout_weight=".5"
             android:orientation="horizontal">
 
-            <LinearLayout
+        <LinearLayout
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight=".5"
@@ -30,7 +30,8 @@
                 android:background="#ff0000"
                 android:weightSum="1">
 
-                <TextView
+
+            <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/presence"
@@ -40,15 +41,15 @@
                     android:gravity="center"
                     android:id="@+id/presence"/>
 
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/presenceStatus"
-                    android:gravity="center"
-                    android:layout_weight=".5" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/presenceStatus"
+                android:gravity="center"
+                android:layout_weight=".5" />
 
-            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
                 android:layout_width="0dip"
@@ -59,16 +60,28 @@
                 android:layout_marginBottom="5dip"
                 android:background="#ff8000">
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dip">
+
+                <ImageView
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    app:srcCompat="@android:drawable/presence_online"
+                    android:id="@+id/lightCon" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/light"
                     android:gravity="center"
                     android:textSize="20dip"
-                    android:layout_marginTop="5dip"
-                    android:layout_marginBottom="5dip"
                     android:id="@+id/light"
                     />
+            </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -111,15 +124,28 @@
                 android:background="#336699">
 
 
-                <TextView
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/gas"
-                    android:textSize="20dip"
                     android:layout_marginTop="5dip"
-                    android:layout_marginBottom="5dip"
-                    android:gravity="center"
-                    android:id="@+id/gas"/>
+                    android:layout_marginBottom="5dip">
+
+                    <ImageView
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        app:srcCompat="@android:drawable/presence_online"
+                        android:id="@+id/gasCon"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gas"
+                        android:textSize="20dip"
+                        android:gravity="center"
+                        android:id="@+id/gas"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
                 <ProgressBar
                     style="?android:attr/progressBarStyleHorizontal"
@@ -177,15 +203,28 @@
                 android:layout_marginTop="5dip"
                 android:background="#993366">
 
-                <TextView
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/door"
-                    android:textSize="20dip"
                     android:layout_marginTop="5dip"
-                    android:layout_marginBottom="5dip"
-                    android:gravity="center"
-                    android:id="@+id/Door" />
+                    android:layout_marginBottom="5dip">
+
+                    <ImageView
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        app:srcCompat="@android:drawable/presence_online"
+                        android:id="@+id/doorCon"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/door"
+                        android:textSize="20dip"
+                        android:gravity="center"
+                        android:id="@+id/Door"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
                 <TextView
                     android:text=""
