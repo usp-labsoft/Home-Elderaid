@@ -33,8 +33,14 @@ O acionamento do alarme (Buzzer + Led) pode ser feito pelo aplicativo ou por mei
 
 ![App_Tela Inicial](App_TelaInicial.png)
 
-![Automático](Automático.png)
+[Automático](Automático.png)
 
 [Manual](Manual.png)
 
-![SOS](SOS.png)
+[SOS](SOS.png)
+
+
+**Esquemático da Placa**
+Sem a funcionalidade de SOS adicional.
+
+![Esquemático](Labview.PNG)
