@@ -2,10 +2,6 @@
 #include <BlynkSimpleShieldEsp8266.h>
 #include <SimpleTimer.h>
 
-// You should get Auth Token in the Blynk App.
-// Go to the Project Settings (nut icon).
-//char auth[] = "dc5c0245aed7442dbd466779298b0e3a";
-//char auth[] = "28bd93dbfd9f48ad8100bb187880d771";
 char auth[] = "7fb8c29988504f5ab263b797a869827b";
 
 // Your WiFi credentials.
@@ -14,24 +10,25 @@ char ssid[] = "Alexis's iPhone";
 char pass[] = "lex166789";
 char server[] = "elderaid.me";
 int port = 8442;
+
 // Hardware Serial on Mega, Leonardo, Micro...
 #define EspSerial Serial
-
-// or Software Serial on Uno, Nano...
-//#include <SoftwareSerial.h>
-//SoftwareSerial EspSerial(2, 3); // RX, TX
 
 // Your ESP8266 baud rate:
 #define ESP8266_BAUD 9600
 
-//ESP8266 wifi(&EspSerial);
+#define ALARM_DELAY 10000L
+
 ESP8266 wifi(&EspSerial);
 
 SimpleTimer timer;
 
-int pin_d6 = 6;
-int pin_d3 = 3; // Buzzer (Atuador)
-int valor_digital = LOW;
+int sensor_porta = 6;
+int buzzer_porta = 3; // Buzzer (Atuador)
+int valor_digital = HIGH;
+int alarmID;
+int alarmIDOn;
+int alarmValue;
 
 WidgetLED led8(V11);
 WidgetLED led10(V13);
@@ -49,9 +46,13 @@ void setup()
   led10.off();
   timer.setInterval(1000L, watchdog);
   timer.setInterval(1500L, blinkLED);
+  alarmID = timer.setTimeout(ALARM_DELAY, alarmEnable); 
+  alarmIDOn = timer.setTimeout(ALARM_DELAY, alarmEnable);
+  timer.disable(alarmIDOn);
+  timer.disable(alarmID);
 
-  pinMode(pin_d6, INPUT);
-  pinMode(pin_d3, OUTPUT);
+  pinMode(sensor_porta, INPUT);
+  pinMode(buzzer_porta, OUTPUT);
   Blynk.begin(auth, wifi, ssid, pass, server, port);
   
 }
@@ -59,14 +60,15 @@ void setup()
 BLYNK_READ(V7)
 {
   // Sensor Magnético
-  Blynk.virtualWrite(V7, digitalRead(pin_d6));
+  valor_digital = digitalRead(sensor_porta);
+  Blynk.virtualWrite(V7, valor_digital);
 }
 
 BLYNK_WRITE(V9)
 {
   // Buzzer
-  int value = param.asInt();
-  digitalWrite(pin_d3, value);
+  alarmValue = param.asInt();
+  digitalWrite(buzzer_porta, alarmValue);
 }
 
 void watchdog(){
@@ -81,9 +83,57 @@ void blinkLED(){
   }
 }
 
+void alarmEnable(){
+  digitalWrite(buzzer_porta, HIGH);
+}
+
+void alarmDisable(){
+  digitalWrite(buzzer_porta, LOW);
+}
+
+void runOffline(){
+  // Reads gas sensor and stores its value
+  valor_digital = digitalRead(sensor_porta);
+  // Verify if door open.
+  if(valor_digital == LOW){
+    // Detected open door.
+    if(!timer.isEnabled(alarmID)){
+      // Set alarm to start after 10 seconds if not already.
+      alarmID = timer.setTimeout(ALARM_DELAY, alarmEnable);
+      timer.enable(alarmID);
+    }
+  }else{
+    // Door closed
+    if(!timer.isEnabled(alarmID)){
+      // If alarm was set previously, turns it off.
+      timer.disable(alarmID);
+    }
+    alarmDisable();
+  }
+}
+
+void verifyDoor(){
+  if(valor_digital == LOW){
+    // Door is open
+    if(!timer.isEnabled(alarmIDOn) and !alarmValue){
+      alarmIDOn = timer.setTimeout(ALARM_DELAY, alarmEnable);
+      timer.enable(alarmIDOn);
+    }
+  }else{
+    alarmDisable();
+  }
+  if(alarmValue){
+    timer.disable(alarmIDOn);
+  }
+}
+
 void loop()
 {
   Blynk.run();
+  if(!Blynk.connected()){
+    runOffline();
+  }else{
+    verifyDoor();
+  }
   timer.run();
 }
-
