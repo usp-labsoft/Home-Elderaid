@@ -1,4 +1,7 @@
 # Módulo de Automação Residencial
+
+[![Alt Video](http://img.youtube.com/vi/-yrMVxxDyRs/0.jpg)](http://www.youtube.com/watch?v=-yrMVxxDyRs)
+
 Módulo com sensor de luz (LDR, com sensibilidade ajustada através de um potenciômetro), módulo sensor de presença PIR e lâmpada com relé.
 Montado em placa padrão. Para a versão anterior, veja Elderaid v.05.
 Além de possibilitar ao usuário que controle a lâmpada pelo aplicativo Blynk, essa versão possui um grau de automação para a luz (em determinada condição, a luz acende e fica assim por um determinado tempo, facilmente ajustável no código Arduino.
@@ -14,38 +17,24 @@ Foi usada uma interrupção externa do Arduino para confiabilidade da informaç�
 O acionamento do alarme (Buzzer + Led) pode ser feito pelo aplicativo ou por meio de botões físicos (aqui representando algum botão que fique com a pessoa, ou em lugar crítico da casa).
 
 **Código**
-[Código Arduino]()
+[Código Arduino - Elderaid_v14](Elderaid_v14.ino)
 
 
 **Parte Física**
 
-![Visão Geral](v05_visaogeral.jpg)
+![Visão Geral](Visão_Geral.jpg)
 
-[Placa](v05_placa.jpg)
+[Detalhe 1](Detalhe_1.jpg)
 
-[LDR](v05_LDR.jpg)
-
-[Placa](v05_placa.jpg)
-
-[Lâmpada](v05_lampada.jpg)
-
-![Esquemático Maquete Arduino v05](ElderAidv05_labview.PNG)
-
-
+[Detalhe 2](Detalhe_2.jpg)
 
 
 **App Blynk**
 
-![Interface App Blynk](v05_blynk_interface.png)
+![App_Tela Inicial](App_TelaInicial.png)
 
-![SOS](blynk_sos.png)
+![Automático](Automático.png)
 
-[Gás](blynk_gas.png)
+[Manual](Manual.png)
 
-[Caso de desconexão](blynk_disconect.png)
-
-![Twitter](blynk_twitter.png)
-
-[Email SOS](blynk_sos_email.png)
-
-![Email Gás](blynk_gas_email.png)
+![SOS](SOS.png)
