@@ -12,6 +12,10 @@ O módulo contém um sensor de gás MQ-2 que envia um sinal analógico informand
 
 ![Visão Geral Gas](Visão_Geral_Gas.JPG)
 
+#### Esquemático
+
+![Schematic_gas](gas.png)
+
 
 ### Funcionamento
 
@@ -26,6 +30,10 @@ O módulo de Sensor magnético tem como objetivo a detecção de portas abertas 
 O módulo contém um sensor magnético com reed switch que envia um sinal digital informando se a porta está aberta(1) ou fechada(0), um buzzer, que funcionará como alarme, um Arduino UNO, que será responsável pelo processamento de informações e um ESP8266-12f, que irá conectar o módulo ao servidor em cloud.
 
 ![Visão Geral Porta](Visão_Geral_Porta.JPG)
+
+#### Esquemático
+
+![Schematic_porta](porta.png)
 
 
 ### Funcionamento
