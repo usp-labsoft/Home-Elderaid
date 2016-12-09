@@ -14,7 +14,7 @@ O módulo contém um sensor de gás MQ-2 que envia um sinal analógico informand
 
 #### Esquemático
 
-![Schematic_gas](gas.png)
+![Schematic_gas](gas_schematic.png)
 
 
 ### Funcionamento
